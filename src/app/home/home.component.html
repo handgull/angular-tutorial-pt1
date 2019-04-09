@@ -1,3 +1,44 @@
-<p>
-  home works!
-</p>
+<div id="data-in">
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Nome</span>
+    </div>
+    <input
+      [(ngModel)]="name"
+      type="text"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-sm">
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Altezza</span>
+    </div>
+    <input
+      [(ngModel)]="height"
+      type="text"
+      class="form-control"
+      aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-sm">
+  </div>
+
+  <button
+    (click)="addToPeople()"
+    type="submit"
+    class="btn btn-primary">Submit</button>
+</div>
+
+<div
+  *ngIf="people.length > 0"
+  class="card">
+  <ul class="list-group list-group-flush">
+    <li
+      *ngFor="let p of people; let i=index"
+      class="list-group-item">
+      <div>Persona N° {{ i+1 }}</div>
+      <div>{{ p.name }}</div>
+      <div>{{ p.height }}</div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,16 @@
+#tbody {
+  height: calc(100% - 56px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 40%;
+  min-width: 320px;
+}
+
+.success-bg {
+  background-color: greenyellow;
+}
