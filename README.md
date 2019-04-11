@@ -11,7 +11,7 @@ ng g c login/alertSuccess # Modificare il selettore del componente per averlo by
 - ## Importare FormsModule per poter usare ngModel nel progetto
 - Le pagine sono fatte grazie agli *ngIf, nell'app-component creo una variabile che può assumere valori di tipo string, e chiamo i componenti con un *ngif su quel valore, vanno messi a disposizione dell'utente due bottoni che facciano cambiare il valore della variabile, in modo da visualizzare solo uno dei due componenti (login o home)
 
-- La pagina di login deve sfruttare ngModule per salvare i valori delle input in typescript.<br>
+- La pagina di login deve sfruttare ngModel per salvare i valori delle input in typescript.<br>
 l'event binding (click) sul bottone per verificare le credenziali,<br>
 property binding [class.myClass] per cambiare il background delle input in caso di credenziali corrette e per nascondere la span che sfrutta la string interpolation tramite [style.display] se l'username è vuoto.<br>
 La span affianco al bottone submit deve far vedere tramite string interpolation lo {{ username }}
