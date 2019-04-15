@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  route = 'login';
+  routes = ['login', 'home'];
+  route = this.routes[0];
 
   onLogin(loginSuccess: boolean) {
     if (!loginSuccess) {

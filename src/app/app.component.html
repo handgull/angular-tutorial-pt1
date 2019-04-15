@@ -1,8 +1,13 @@
 <nav class="navbar navbar-dark bg-dark">
   <span class="navbar-brand">Angular tutorial pt. 1</span>
+  <span *ngIf="route === 'home'" class="navbar-brand">Welcome!</span>
   <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-primary" (click)="route = 'login'">Login</button>
-    <button type="button" class="btn btn-primary" (click)="route = 'home'">Home</button>
+    <button
+      *ngFor="let r of routes"
+      type="button"
+      class="btn btn-primary"
+      [class.btn-secondary]="route !== r"
+      (click)="route = r">{{ r }}</button>
   </div>
 </nav>
 
