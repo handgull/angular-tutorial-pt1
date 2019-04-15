@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -6,9 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username: string;
+  @Input() username: string;
   password: string;
   loginSuccess = false;
+  @Output('status') emittedStatus = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -17,9 +18,6 @@ export class LoginComponent implements OnInit {
 
   checkLogin() {
     this.loginSuccess = this.username === 'username' && this.password === 'password';
-
-    if (!this.loginSuccess) {
-      alert('Credenziali non valide!');
-    }
+    this.emittedStatus.emit(this.loginSuccess);
   }
 }

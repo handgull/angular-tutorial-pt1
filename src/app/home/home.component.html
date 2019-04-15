@@ -29,16 +29,4 @@
     class="btn btn-primary">Submit</button>
 </div>
 
-<div
-  *ngIf="people.length > 0"
-  class="card">
-  <ul class="list-group list-group-flush">
-    <li
-      *ngFor="let p of people; let i=index"
-      class="list-group-item">
-      <div>Persona N° {{ i+1 }}</div>
-      <div>{{ p.name }}</div>
-      <div>{{ p.height }}</div>
-    </li>
-  </ul>
-</div>
+<app-home-list *ngIf="people.length > 0" [people]="people"></app-home-list>

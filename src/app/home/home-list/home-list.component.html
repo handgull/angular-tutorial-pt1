@@ -1,0 +1,12 @@
+<div
+  class="card">
+  <ul class="list-group list-group-flush">
+    <app-home-row
+      class="list-group-item"
+      *ngFor="let p of people; let i=index"
+      [id]="i+1">
+      <div>{{ p.name }}</div>
+      <div>{{ p.height }}</div>
+    </app-home-row>
+  </ul>
+</div>

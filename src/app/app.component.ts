@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   route = 'login';
+
+  onLogin(loginSuccess: boolean) {
+    if (!loginSuccess) {
+      alert('Credenziali non valide!');
+    } else {
+      setTimeout(() => {
+        this.route = 'home';
+      }, 1000);
+    }
+  }
 }

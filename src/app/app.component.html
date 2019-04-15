@@ -6,6 +6,6 @@
   </div>
 </nav>
 
-<app-login *ngIf="route === 'login'"></app-login>
+<app-login *ngIf="route === 'login'" (status)="onLogin($event)" [username]="'username'"></app-login>
 
 <div app-home *ngIf="route === 'home'"></div>
